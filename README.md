@@ -27,7 +27,7 @@ Our web dashboard displays the **last known location** of every tagged item on a
 
 | Category | Technology |
 |-----------|-------------|
-| Frontend | React (Create React App or Vite) |
+| Frontend | React |
 | Hosting | Vercel |
 | Backend | Firebase or Supabase (real-time database + API) |
 | Maps | Google Maps JS API or Leaflet.js |

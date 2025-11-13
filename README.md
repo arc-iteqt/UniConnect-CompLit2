@@ -14,13 +14,10 @@ Our web dashboard displays the **last known location** of every tagged item on a
 
 ## 🧱 Features
 
-- 📡 Detect Bluetooth beacons using nearby phones
-- 🗺️ View beacon locations on an interactive map
-- 🔍 Search and filter items by name or ID
-- 🕓 See “last seen” timestamps and building locations
-- 💻 Dashboard view for administrators
-- 📱 Mobile-friendly design for students and staff
-
+- Detect Bluetooth beacons using nearby phones
+- View beacon locations on an interactive map
+- Search and filter items by name or ID
+- See “last seen” timestamps and building locations
 ---
 
 ## ⚙️ Tech Stack
@@ -30,6 +27,6 @@ Our web dashboard displays the **last known location** of every tagged item on a
 | Frontend | React |
 | Hosting | Vercel |
 | Backend | Firebase or Supabase (real-time database + API) |
-| Maps | Google Maps JS API or Leaflet.js |
-| Authentication (optional) | Firebase Auth or Supabase Auth |
+| Maps | MappedIn |
+| Authentication (optional) | Supabase Auth |
 | Styling | Tailwind CSS or simple CSS modules |

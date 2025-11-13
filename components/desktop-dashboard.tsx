@@ -10,6 +10,7 @@ import {
   Bell,
   MapPin,
   Clock,
+  Bluetooth,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -18,6 +19,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import { supabase } from "@/lib/supabaseClient"
+import Link from "next/link"
 
 interface Beacon {
   id: string
@@ -39,10 +41,11 @@ interface RealtimePayload {
 }
 
 const menuItems = [
-  { icon: LayoutDashboard, label: "Dashboard", active: true },
+  { icon: LayoutDashboard, label: "Dashboard", active: false },
   { icon: Radio, label: "Beacons", active: false },
   { icon: BarChart3, label: "Reports", active: false },
   { icon: Settings, label: "Settings", active: false },
+  { icon: Bluetooth, label: "Bluetooth Scan", active: true }, // new active menu
 ]
 
 export function DesktopDashboard() {
@@ -110,17 +113,21 @@ export function DesktopDashboard() {
 
         <nav className="flex-1 p-4 space-y-2">
           {menuItems.map((item) => (
-            <Button
+            <Link
               key={item.label}
-              variant={item.active ? "default" : "ghost"}
-              className={cn(
-                "w-full justify-start gap-3 h-11",
-                item.active && "bg-primary text-primary-foreground hover:bg-primary/90"
-              )}
+              href={`/${item.label.toLowerCase().replace(/\s+/g, "-")}`}
             >
-              <item.icon className="w-5 h-5" />
-              {item.label}
-            </Button>
+              <Button
+                variant={item.active ? "default" : "ghost"}
+                className={cn(
+                  "w-full justify-start gap-3 h-11",
+                  item.active && "bg-primary text-primary-foreground hover:bg-primary/90"
+                )}
+              >
+                <item.icon className="w-5 h-5" />
+                {item.label}
+              </Button>
+            </Link>
           ))}
         </nav>
       </aside>

@@ -14,7 +14,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { supabase } from "@/lib/supabaseClient";
-import MapViewer from "@/components/map-viewer";
 
 interface BeaconLatest {
   id: string;

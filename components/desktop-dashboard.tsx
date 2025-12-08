@@ -14,6 +14,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { supabase } from "@/lib/supabaseClient";
+import MapViewer from "@/components/map-viewer";
 
 interface BeaconLatest {
   id: string;
@@ -88,7 +89,7 @@ export function DesktopDashboard() {
             <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
               <Radio className="w-6 h-6 text-primary-foreground" />
             </div>
-            <h1 className="text-xl font-semibold">TrackPack</h1>
+            <h1 className="text-xl font-semibold">UniConnect</h1>
           </div>
         </div>
 
@@ -123,10 +124,13 @@ export function DesktopDashboard() {
         {/* Map + List */}
         <div className="flex flex-1 overflow-hidden">
           {/* Map */}
-          <div className="flex-1 relative bg-muted/30">
-            <div className="absolute inset-0 flex justify-center items-center opacity-10">
-              <p>Map Placeholder — you can render real map later</p>
-            </div>
+          <div className="flex-1 relative">
+            <iframe
+              src="https://app.mappedin.com/map/68e3eb958cda84000b1705d9"
+              className="absolute inset-0 w-full h-full border-none"
+              allow="fullscreen"
+              loading="lazy"
+            />
 
             {selected && (
               <Card className="absolute top-4 left-4 p-4 w-72 shadow-xl">
